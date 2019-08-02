@@ -1,0 +1,39 @@
+[parity]
+chain = "spec.json"
+base_path = "/tmp/parity"
+keys_path = "./keys"
+db_path = "./info/chains"
+[network]
+port = 30301
+reserved_only = false
+reserved_peers = "./enodes.txt"
+[rpc]
+port = 8545
+interface = "all"
+cors = ["all"]
+hosts = ["all"]
+apis = ["web3", "eth", "pubsub", "net", "parity", "parity_pubsub", "traces", "rpc", "shh", "shh_pubsub"]
+[websockets]
+port = 8546
+interface = "all"
+hosts = ["all"]
+apis = ["web3", "eth", "pubsub", "net", "parity", "parity_pubsub", "traces", "rpc", "shh", "shh_pubsub"]
+[ipc]
+disable = false
+path = "$HOME/.local/share/io.parity.ethereum/jsonrpc.ipc"
+apis = ["web3", "eth", "pubsub", "net", "parity", "parity_pubsub", "parity_accounts", "traces", "rpc", "shh", "shh_pubsub"]
+[secretstore]
+# self_secret = "47a3a61e265fafd5aa3e6e6d7232413b937e5e4f0fb217e050293d4d7fb94465" # private key
+[mining]
+# engine_signer = "0x0cdf0edd304a8e1715d5043d0afe3d3322cc6e3b" # validator
+# To allow 0 ether transactions
+usd_per_tx = "0"
+reseal_on_txs = "none"
+force_sealing = true
+[account]
+password = ["node.pwds"]
+# Necessarry for block explorer
+#[footprint]
+#tracing = "on"
+#pruning = "archive"
+#fat_db = "on"
